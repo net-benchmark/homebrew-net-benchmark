@@ -1,0 +1,24 @@
+name: Test Homebrew Formula
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      # Installs the exact formula file in this commit/PR, not whatever a
+      # `brew tap` would fetch — catches a bad edit before it's pushed.
+      - name: Install from source
+        run: brew install --build-from-source --verbose ./Formula/net-benchmark.rb
+
+      - name: Run formula test block
+        run: brew test net-benchmark
+
+      - name: Audit
+        run: brew audit --strict --online net-benchmark
