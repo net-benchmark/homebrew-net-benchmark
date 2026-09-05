@@ -7,21 +7,20 @@ class NetBenchmark < Formula
   sha256 "ba4ed1b0adc1bcbc25c6c0f849f4b73a8d23346fea8b054696cc34474ddb1ea0"
   license "MIT"
 
-  depends_on "python@3.14"
-
   # Build-time only: cryptography and cffi need a Rust toolchain and libffi
   # headers when built from source, which is what --build-from-source and
   # homebrew-core both do.
-  depends_on "rust" => :build
   depends_on "pkgconf" => :build
-  depends_on "libffi"
+  depends_on "rust" => :build
 
   # Runtime C libraries for the compiled dependencies in the resource list
-  # below (pillow, matplotlib, numpy, pandas).
+  # below (pillow, matplotlib, numpy, pandas, cffi/cryptography).
   depends_on "freetype"
   depends_on "jpeg-turbo"
+  depends_on "libffi"
   depends_on "libpng"
   depends_on "openssl@3"
+  depends_on "python@3.14"
 
   resource "anyio" do
     url "https://files.pythonhosted.org/packages/ea/9a/c15a60547004a3f3cea20296c934f827ddd7bdba225a2e7e9fcb5ec48c80/anyio-4.15.0.tar.gz"
@@ -244,6 +243,6 @@ class NetBenchmark < Formula
            "--formats", "csv",
            "--output", output_dir,
            "--quiet"
-    assert_predicate output_dir, :exist?
+    assert_path_exists output_dir
   end
 end
