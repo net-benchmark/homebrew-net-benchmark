@@ -1,0 +1,41 @@
+name: Check for new net-benchmark release
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # daily, 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  check-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Run update script
+        id: update
+        run: python3 scripts/update_formula.py
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if git diff --quiet Formula/net-benchmark.rb; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open PR
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore: bump formula to latest PyPI release"
+          title: "Bump net-benchmark formula to latest PyPI release"
+          body: |
+            Automated — `scripts/update_formula.py` detected a newer version
+            on PyPI and regenerated the formula's resource block against it.
+
+            The existing CI workflow (`test-formula.yml`) will run the real
+            build/test/audit against this PR automatically. Review the diff
+            and merge once that's green — this PR does not merge itself.
+          branch: auto-bump-formula
+          delete-branch: true
