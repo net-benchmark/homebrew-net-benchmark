@@ -9,13 +9,29 @@ on:
 jobs:
   test:
     runs-on: macos-latest
+    env:
+      # This is our own tap, tested in our own CI — Tap Trust exists to
+      # protect against installing a random third party's formula code
+      # unreviewed, which doesn't apply to testing our own commit.
+      HOMEBREW_NO_REQUIRE_TAP_TRUST: 1
     steps:
       - uses: actions/checkout@v6
 
-      # Installs the exact formula file in this commit/PR, not whatever a
-      # `brew tap` would fetch — catches a bad edit before it's pushed.
+      # `brew install ./path/to/formula.rb` was removed — Homebrew now
+      # requires every formula to live inside a registered tap. Rather
+      # than `brew tap net-benchmark/net-benchmark` (which would clone
+      # the real GitHub remote and test whatever's already on main, not
+      # this commit), place this exact checkout at the path Homebrew
+      # expects the tap to live at, so it tests the PR/commit under
+      # test rather than what's already published.
+      - name: Register this checkout as the tap
+        run: |
+          TAP_DIR="$(brew --repository)/Library/Taps/net-benchmark/homebrew-net-benchmark"
+          mkdir -p "$(dirname "$TAP_DIR")"
+          ln -s "$GITHUB_WORKSPACE" "$TAP_DIR"
+
       - name: Install from source
-        run: brew install --build-from-source --verbose ./Formula/net-benchmark.rb
+        run: brew install --build-from-source --verbose net-benchmark/net-benchmark/net-benchmark
 
       - name: Run formula test block
         run: brew test net-benchmark
