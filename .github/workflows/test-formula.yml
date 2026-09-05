@@ -37,4 +37,4 @@ jobs:
         run: brew test net-benchmark
 
       - name: Audit
-        run: brew audit --strict --online net-benchmark
+        run: brew audit --new --strict --online net-benchmark
