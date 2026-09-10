@@ -3,8 +3,8 @@ class NetBenchmark < Formula
 
   desc "Network benchmarking suite for DNS, HTTP, and SSL/TLS"
   homepage "https://github.com/net-benchmark/net-benchmark"
-  url "https://files.pythonhosted.org/packages/e1/6e/3df908166117b9d135244ce922200bee48239359a1f47df6c63051503be5/net_benchmark-0.5.5.tar.gz"
-  sha256 "ba4ed1b0adc1bcbc25c6c0f849f4b73a8d23346fea8b054696cc34474ddb1ea0"
+  url "https://files.pythonhosted.org/packages/53/35/bee5c75d38539d0d30794732864e564b38827887ac5ba0c9c2f5b165e578/net_benchmark-0.5.6.tar.gz"
+  sha256 "5149957f9c5f79e1b46cd2f5a2b1b85145c4f0ad825e188411860866a8192918"
   license "MIT"
 
   # Build-time only: cryptography and cffi need a Rust toolchain and libffi
@@ -24,8 +24,8 @@ class NetBenchmark < Formula
   depends_on "python@3.14"
 
   resource "anyio" do
-    url "https://files.pythonhosted.org/packages/ea/9a/c15a60547004a3f3cea20296c934f827ddd7bdba225a2e7e9fcb5ec48c80/anyio-4.15.0.tar.gz"
-    sha256 "b5c620ed540725e2579c31b17bb995b3bf02c9281c9cace04c7d186380bab85e"
+    url "https://files.pythonhosted.org/packages/a9/d2/f4d173e22df740bc37b1db102b386ba719b66e95b0f0d751f556b387e6d2/anyio-4.15.1.tar.gz"
+    sha256 "9f28306018cbd6d329e64a36d58256edff76dd996fe423bc957326e578b82a94"
   end
 
   resource "certifi" do
@@ -134,8 +134,8 @@ class NetBenchmark < Formula
   end
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/9a/80/db0b4559e57ec36362bedbb05530a87fafbcb6067708c946967a41d449e7/numpy-2.5.2.tar.gz"
-    sha256 "d482d171c406ae88c5b19cad3b6a1c4c5209f886ab74bc44c2c865c23f52d860"
+    url "https://files.pythonhosted.org/packages/13/01/11703282db468b85f6f7b8c7f22d058de5970d5c7e60a3a8aaa313c3de36/numpy-2.5.3.tar.gz"
+    sha256 "df2d5874ff183595a4ba404edd04f6bd9b5505c1d7708573f6a6c17489a67563"
   end
 
   resource "openpyxl" do
@@ -207,6 +207,7 @@ class NetBenchmark < Formula
     url "https://files.pythonhosted.org/packages/92/ff/5a28bdfd8c3ebec42564ac7d0e54ca3db65044a9314a97f9564fa7a1e926/tzdata-2026.3.tar.gz"
     sha256 "4a1518b8993086a7982523e071643f3c0e5f213e75b21318e78bcabfff9d1415"
   end
+
 
   def install
     virtualenv_install_with_resources
