@@ -3,8 +3,8 @@ class NetBenchmark < Formula
 
   desc "Network benchmarking suite for DNS, HTTP, and SSL/TLS"
   homepage "https://github.com/net-benchmark/net-benchmark"
-  url "https://files.pythonhosted.org/packages/53/35/bee5c75d38539d0d30794732864e564b38827887ac5ba0c9c2f5b165e578/net_benchmark-0.5.6.tar.gz"
-  sha256 "5149957f9c5f79e1b46cd2f5a2b1b85145c4f0ad825e188411860866a8192918"
+  url "https://files.pythonhosted.org/packages/56/48/fa727027ffa80a8f0615dba97352928f142c045e35275cffc5f0297d245d/net_benchmark-0.6.0.tar.gz"
+  sha256 "c6564ffb5f8f35845037fdf94590fef16240113af9e6ae3e2834484b2cdcdf74"
   license "MIT"
 
   # Build-time only: cryptography and cffi need a Rust toolchain and libffi
@@ -74,8 +74,8 @@ class NetBenchmark < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/d4/41/0f072a712dc74496e03710e462a18a4cfd8a258ad055a4e22d28b43a7abd/fonttools-4.64.0.tar.gz"
-    sha256 "ecb2e59a7bc692fee64dda6010deb66222335693b30046f15cccf81233aa715f"
+    url "https://files.pythonhosted.org/packages/77/51/d63c7e52163ac14393a35bd14bd7c0da95f8f74be5d7cc988092f9965129/fonttools-4.65.0.tar.gz"
+    sha256 "762ba5431358d0dbd4a01982484a1d494fb267e91f974cdcf20b80eab8560f6f"
   end
 
   resource "h11" do
@@ -194,8 +194,8 @@ class NetBenchmark < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz"
-    sha256 "55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220"
+    url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
+    sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
   end
 
   resource "typing-extensions" do
