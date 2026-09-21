@@ -3,8 +3,8 @@ class NetBenchmark < Formula
 
   desc "Network benchmarking suite for DNS, HTTP, and SSL/TLS"
   homepage "https://github.com/net-benchmark/net-benchmark"
-  url "https://files.pythonhosted.org/packages/56/48/fa727027ffa80a8f0615dba97352928f142c045e35275cffc5f0297d245d/net_benchmark-0.6.0.tar.gz"
-  sha256 "c6564ffb5f8f35845037fdf94590fef16240113af9e6ae3e2834484b2cdcdf74"
+  url "https://files.pythonhosted.org/packages/58/a0/ef9badc54d3b5a1f22162138cd928226b15671d6eb396608f21eb291dff9/net_benchmark-0.6.1.tar.gz"
+  sha256 "49262befbaeedaf37eb05dd5c1fedbcfef382441f99ef889c6bfb6f5f2b065a1"
   license "MIT"
 
   # Build-time only: cryptography and cffi need a Rust toolchain and libffi
@@ -49,8 +49,8 @@ class NetBenchmark < Formula
   end
 
   resource "contourpy" do
-    url "https://files.pythonhosted.org/packages/58/01/1253e6698a07380cd31a736d248a3f2a50a7c88779a1813da27503cadc2a/contourpy-1.3.3.tar.gz"
-    sha256 "083e12155b210502d0bca491432bb04d56dc3432f95a979b429f2848c3dbe880"
+    url "https://files.pythonhosted.org/packages/83/5a/a55177dd22553a277388e8a1b3220e92de91bacb28356cdc73caa240121d/contourpy-1.4.0.tar.gz"
+    sha256 "20156f5a1ac4f8ce02656e39a61e82164a3d359796dc8026f75b062783d500e1"
   end
 
   resource "cryptography" do
@@ -109,8 +109,8 @@ class NetBenchmark < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
-    sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+    url "https://files.pythonhosted.org/packages/f5/08/8eea9d4b8302028f3abb2c0813953f7aec26d33b7a8960ed760e65ff29fa/idna-3.20.tar.gz"
+    sha256 "a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44"
   end
 
   resource "jinja2" do
@@ -129,8 +129,8 @@ class NetBenchmark < Formula
   end
 
   resource "matplotlib" do
-    url "https://files.pythonhosted.org/packages/49/64/f9a391af28f518b11ad45a8a712353c94a0aefce09d3703200e5c54b610a/matplotlib-3.11.1.tar.gz"
-    sha256 "69647db5746941c793d6e445a4cd349323ffb87d9cc958c2ad84a659b4832d30"
+    url "https://files.pythonhosted.org/packages/e7/c8/9aa712a0afb882649424dd8de8ad9aa6235e796e84c6052e8f6dc1598d0d/matplotlib-3.11.2.tar.gz"
+    sha256 "cec596316640f2b394b8f0daa0ea61a8eae82d017b620b9f202befb972a59ea4"
   end
 
   resource "numpy" do
@@ -169,8 +169,8 @@ class NetBenchmark < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz"
-    sha256 "c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc"
+    url "https://files.pythonhosted.org/packages/e4/11/b213bebff182584360cb8d17c72c1677fec5c5c228de439e63bcf8ab1c8f/pyparsing-3.3.3.tar.gz"
+    sha256 "928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36"
   end
 
   resource "python-dateutil" do
@@ -204,8 +204,8 @@ class NetBenchmark < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/92/ff/5a28bdfd8c3ebec42564ac7d0e54ca3db65044a9314a97f9564fa7a1e926/tzdata-2026.3.tar.gz"
-    sha256 "4a1518b8993086a7982523e071643f3c0e5f213e75b21318e78bcabfff9d1415"
+    url "https://files.pythonhosted.org/packages/e4/31/3d74fa778a63b98b7374323befcc0be5ab3bd94afd4096a0124e7379152c/tzdata-2026.4.tar.gz"
+    sha256 "f1b8bd365d8d210c55353f4d7f8d6d8561c0ba50d704b700d195a9424bba0d79"
   end
 
 
